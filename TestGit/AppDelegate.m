@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,29 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    UIViewController *vc1 = [[UIViewController alloc] init];
+    vc1.view.backgroundColor = [UIColor redColor];
+    UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:vc1];
+    nav1.tabBarItem.title = @"首页";
+    
+    UIViewController *vc2= [[UIViewController alloc] init];
+    vc2.view.backgroundColor = [UIColor redColor];
+    UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:vc2];
+    nav2.tabBarItem.title = @"分类";
+    
+    ViewController *vc3 = [[ViewController alloc] init];
+    UINavigationController *nav3 = [[UINavigationController alloc] initWithRootViewController:vc3];
+    nav3.tabBarItem.title = @"购物车";
+    
+    UIViewController *vc4= [[UIViewController alloc] init];
+    vc4.view.backgroundColor = [UIColor redColor];
+    UINavigationController *nav4 = [[UINavigationController alloc] initWithRootViewController:vc4];
+    nav4.tabBarItem.title = @"我的";
+    
+    UITabBarController *tabbar = [[UITabBarController alloc] init];
+    tabbar.viewControllers = @[nav1, nav2, nav3, nav4];
+    
+    self.window.rootViewController = tabbar;
     return YES;
 }
 
