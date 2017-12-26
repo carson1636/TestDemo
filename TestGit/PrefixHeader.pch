@@ -11,7 +11,39 @@
 
 #ifdef __OBJC__
 
-#import "AppDelegate.h"
+#pragma mark - Mode
+
+#define is_iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define is_iPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define is_iPhone6P ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define is_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
+
+#pragma mark - Version
+
+#define kOSVersion [[UIDevice currentDevice].systemVersion floatValue]
+#define kOS_iOS7 (OSVersion >= 7)
+#define kOS_iOS8 (OSVersion >= 8)
+#define kOS_iOS9 (OSVersion >= 9)
+#define kOS_iOS10 (OSVersion >= 10)
+#define kOS_iOS11 (OSVersion >= 11)
+
+
+#pragma mark - Screen
+
+#define KScreenBounds    [UIScreen mainScreen].bounds
+#define KScreenSize    [UIScreen mainScreen].bounds.size
+#define KScreenHeight  ([[UIScreen mainScreen] bounds].size.height)
+#define KScreenWidth   ([[UIScreen mainScreen] bounds].size.width)
+
+#pragma mark - Log
+#define DLog(fmt, ...) NSLog((@"[文件名:%s]\n" "[函数名:%s]\n" "[行号:%d] \n" fmt), __FILE__, __FUNCTION__, __LINE__, ##__VA_ARGS__);
+
+
+
 
 #endif
 

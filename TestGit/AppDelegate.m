@@ -17,6 +17,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    NSLog(@"%@", NSStringFromCGSize([[UIScreen mainScreen] currentMode].size));
+    
+    if (is_iPhone5) {
+        NSLog(@"-----iPhone5-----");
+    } else if (is_iPhone6) {
+        NSLog(@"-----iPhone6-----");
+    } else if (is_iPhone6P) {
+        NSLog(@"-----iPhone6P-----");
+    } else if (is_iPhoneX) {
+        NSLog(@"-----iPhoneX-----");
+    }
+    
     UIViewController *vc1 = [[UIViewController alloc] init];
     vc1.view.backgroundColor = [UIColor redColor];
     UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:vc1];

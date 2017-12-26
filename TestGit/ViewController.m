@@ -22,6 +22,8 @@ struct test {
 
 @implementation ViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -97,7 +99,7 @@ struct test {
 }
 
 - (void)dealloc {
-    NSLog(@"对象销毁");
+    DLog(@"对象销毁");
 }
 
 - (void)btnDidClicked {
